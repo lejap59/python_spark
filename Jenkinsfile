@@ -2,8 +2,7 @@ pipeline {
     agent any 
     
     environment {
-        mavenhome = tool 'jenkins-mvn'
-        imageName = "lejap59/cicddemo:latest"
+        imageName = "lejap59/python_spark:latest"
         registryCredentials = "docker hub"
         registry = ""
         dockerImage = ""
@@ -16,13 +15,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "mvn clean -DskipTests install"
+                sh "echo 'No build to do'"
             }
         }
         
         stage('Test') {
             steps {
-                sh "mvn test"
+                sh "echo 'No test'"
             }
         }    
         
