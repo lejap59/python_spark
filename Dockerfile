@@ -22,4 +22,4 @@ COPY ./*.py /app/
 # set the working directory in the container to be the /app
 WORKDIR /app
 #COPY --from=compiler /opt/venv /opt/venv
-CMD ["python3","HelloWorld.py"]
+CMD ["python3","HelloWorld-flask.py"]
