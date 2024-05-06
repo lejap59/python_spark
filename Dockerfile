@@ -17,7 +17,7 @@ COPY ./*.py /app/
 
 #RUN pip3 install -r /app/requirements.txt
 # expose the port that uvicorn will run the app
-#EXPOSE 8000
+EXPOSE 8000
 # copy the local app/ folder to the /app folder in the container
 # set the working directory in the container to be the /app
 WORKDIR /app
