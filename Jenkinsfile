@@ -1,7 +1,7 @@
 pipeline {
 
     agent any
-    
+
     environment {
         imageName = "lejap59/python_spark:latest"
         registryCredentials = "docker hub"
@@ -48,9 +48,9 @@ pipeline {
            steps{
               script{
                   kubeconfig(credentialsId: '59702e19-261c-47a6-8380-faf5215b7103', serverUrl: 'https://192.168.49.2:8443') {
-                    sh 'kubectl apply -f deployment.yml'
-                    sh 'kubectl rollout restart -f deployment.yml'
-                    sh 'kubectl apply -f service.yml'
+                    sh 'minikube kubectl -- apply -f deployment.yml'
+                    sh 'minikube kubectl -- rollout restart -f deployment.yml'
+                    sh 'minikube kubectl -- apply -f service.yml'
                 }
             }
            }
