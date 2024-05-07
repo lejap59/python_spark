@@ -46,10 +46,11 @@ pipeline {
             steps {
                 script {
                 kubernetesDeploy {
-                    configs: "kubernetes/deployment.yaml"
+                    configs: 'kubernetes/deployment.yaml'
                     kubeconfigId : 'my-kubeconfig'
   
                 }
+            }
             }
         }
     }
