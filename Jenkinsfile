@@ -44,16 +44,11 @@ pipeline {
             }
         }
      
-        stage('Deploy to k8s'){
-           steps{
-              script{
-                  kubeconfig(credentialsId: '59702e19-261c-47a6-8380-faf5215b7103', serverUrl: 'https://192.168.49.2:8443') {
-                    sh 'minikube kubectl -- apply -f deployment.yml'
-                    sh 'minikube kubectl -- rollout restart -f deployment.yml'
-                    sh 'minikube kubectl -- apply -f service.yml'
+        agent {
+           kubernetes {
+              defaultContainer 'python_pyspark'
+              yaml 'kubernetes/deployment.yml'
                 }
-            }
-           }
         }
     }
 }
