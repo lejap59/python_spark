@@ -1,5 +1,7 @@
 pipeline {
 
+    agent any
+    
     environment {
         imageName = "lejap59/python_spark:latest"
         registryCredentials = "docker hub"
