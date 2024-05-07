@@ -1,6 +1,11 @@
 pipeline {
 
-    agent any
+    agent {
+           kubernetes {
+              defaultContainer 'python_pyspark'
+              yaml 'kubernetes/deployment.yml'
+                }
+    }
 
     environment {
         imageName = "lejap59/python_spark:latest"
@@ -44,11 +49,5 @@ pipeline {
             }
         }
      
-        agent {
-           kubernetes {
-              defaultContainer 'python_pyspark'
-              yaml 'kubernetes/deployment.yml'
-                }
-        }
     }
 }
