@@ -45,12 +45,10 @@ pipeline {
         stage('Deploy Kubernetes') {
             steps {
                 kubernetesDeploy {
-                    configs: 'kubernetes/deployment.yaml'
+                    configs: 'kubernetes/deployment.yaml', 'kubernetes/service.yaml'
                     kubeconfigId : 'my-kubeconfig'
-                    }
                 }
             }
         }
-
     }
 }
