@@ -33,7 +33,7 @@ pipeline {
             }
         }    
         
-        stage('Deploy') {
+        stage('Push docker image in registry') {
             steps {
                 script {
                     withDockerRegistry([credentialsId: registryCredentials, url: ""]) {
@@ -42,5 +42,15 @@ pipeline {
                 }
             }
         }
+        stage('Deploy Kubernetes') {
+            steps {
+                kubernetesDeploy {
+                    configs: 'kubernetes/deployment.yaml'
+                    kubeconfigId : 'my-kubeconfig'
+                    }
+                }
+            }
+        }
+
     }
 }
