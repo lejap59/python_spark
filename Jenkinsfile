@@ -1,9 +1,4 @@
 pipeline {
-    agent {
-        Kubernetes {
-            yaml 'kubernetes/deployment.yaml'
-        }
-    }  
 
     environment {
         imageName = "lejap59/python_spark:latest"
