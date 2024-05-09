@@ -3,7 +3,7 @@ pipeline {
     agent {
            kubernetes {
               defaultContainer 'python_pyspark'
-              yaml 'kubernetes/deployment.yml'
+              yaml 'kubernetes/deployment.yaml'
                 }
     }
 
