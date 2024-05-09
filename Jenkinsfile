@@ -43,6 +43,7 @@ pipeline {
                 }
             }
         }
+   }
     node {
         stage('Apply Kubernetes files') {
            withKubeConfig([credentialsId: 'user1', serverUrl: 'https://api.k8s.my-company.com']) {
@@ -50,5 +51,4 @@ pipeline {
            }
         }
     }
-   }
 }
