@@ -47,10 +47,10 @@ pipeline {
         stage('Apply Kubernetes files') {
             steps {
                 script {
-                   withKubeConfig([credentialsId: 'cb27c82b-d9dc-4a9a-aaa7-2ff8ca4a2bef', serverUrl: 'https://192.168.49.2:8443']) {
+                   /*withKubeConfig([credentialsId: 'cb27c82b-d9dc-4a9a-aaa7-2ff8ca4a2bef', serverUrl: 'https://192.168.49.2:8443']) { */
                         sh 'minikube start'
                         sh 'minikube kubectl -- apply -f kubernetes/deployment.yaml'
-                    }
+                   /* } */
                 }
            }
         }
