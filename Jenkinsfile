@@ -58,6 +58,7 @@ pipeline {
                        sh '$HOME/bin/kubectl apply -f kubernetes/eks-sample-deployment.yaml'
                        sh '$HOME/bin/kubectl apply -f kubernetes/eks-sample-service.yaml'
                        sh '$HOME/bin/kubectl apply -f kubernetes/deployment.yaml'
+                       sh '$HOME/bin/kubectl apply -f kubernetes/service.yaml'
                     }
                  }
              }
