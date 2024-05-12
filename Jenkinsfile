@@ -55,10 +55,10 @@ pipeline {
                        sh 'ls $HOME'
                        sh 'pwd'
                        sh "$HOME/bin/kubectl get pods -n eks-sample-app"   
-                       sh 'kubectl apply -f eks-sample-deployment.yaml'
+                       sh '$HOME/bin/kubectl apply -f eks-sample-deployment.yaml'
                     }
                  }
-           }
-        }
-   }
+             }
+         }
+     }
 }
