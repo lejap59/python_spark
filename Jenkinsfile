@@ -44,7 +44,7 @@ pipeline {
             }
         }
 
-        stage('Deploying React.js container to Kubernetes') {
+        stage('Deploying lejap59/python_spark container to Kubernetes') {
              steps {
                  script {
          
