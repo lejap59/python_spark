@@ -49,14 +49,7 @@ pipeline {
                  script {
          
                     withAWS(region:'eu-west-1',credentials:'637423173465') {
-                       // do something
-                       // sh 'kubectl get all -n eks-sample-app'
-                       sh 'ls -lart'
-                       sh 'ls $HOME'
-                       sh 'pwd'
-                       sh "$HOME/bin/kubectl get pods -n eks-sample-app"   
-                       sh '$HOME/bin/kubectl apply -f kubernetes/eks-sample-deployment.yaml'
-                       sh '$HOME/bin/kubectl apply -f kubernetes/eks-sample-service.yaml'
+                       // create deployment and service
                        sh '$HOME/bin/kubectl apply -f kubernetes/deployment.yaml'
                        sh '$HOME/bin/kubectl apply -f kubernetes/service.yaml'
                     }
