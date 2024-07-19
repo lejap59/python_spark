@@ -22,7 +22,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                sh "echo 'No test'"
+                sh "echo 'No test to do'"
             }
         }    
         

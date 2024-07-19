@@ -10,6 +10,7 @@ WORKDIR /app
 COPY ./*.py .
 
 # install flask
+RUN pip3 install pyspark
 RUN pip3 install flask
 
 # expose the port 
