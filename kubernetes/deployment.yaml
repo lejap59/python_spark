@@ -2,7 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
    name: python-helloworld
-   namespace: default
+   namespace: studi
+   labels:
+     app: python_spark
 spec:
    selector:
      matchLabels:
