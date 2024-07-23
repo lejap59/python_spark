@@ -14,16 +14,16 @@ resource "mongodbatlas_cluster" "cluster1" {
   name = "studiclusterVince"
 #  project_id   = var.atlas-project.id
 #  name         = var.atlas_project_name
-#  cluster_type = "REPLICASET"
-#  replication_specs {
-#    num_shards = 1
-#    regions_config {
-#      region_name     = var.atlas_region
-#      electable_nodes = 3
-#      priority        = 7
-#      read_only_nodes = 0
-#    }
-#  }
+  cluster_type = "REPLICASET"
+  replication_specs {
+    num_shards = 1
+    regions_config {
+      region_name     = var.atlas_region
+      electable_nodes = 3
+      priority        = 7
+      read_only_nodes = 0
+    }
+  }
 #  auto_scaling_disk_gb_enabled = true
   mongo_db_major_version       = var.mongodb_version 
 
